@@ -1,39 +1,64 @@
-[gd_scene load_steps=2 format=3 uid="uid://yd3hwsijep5t"]
+[gd_scene load_steps=4 format=3 uid="uid://yd3hwsijep5t"]
 
 [ext_resource type="FontFile" uid="uid://bkogwpgk20lp" path="res://RubikMonoOne-Regular.ttf" id="1_le0ix"]
+[ext_resource type="Script" uid="uid://0c3i3nsyry8g" path="res://Scripts/how_to_play.gd" id="1_txn5h"]
+[ext_resource type="Texture2D" uid="uid://bwp5njyyylx7j" path="res://Buttons/Icons/right-arrow (1).png" id="3_2rsjb"]
 
 [node name="HowToPlay" type="Control"]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 4
+script = ExtResource("1_txn5h")
 
 [node name="ColorRect" type="ColorRect" parent="."]
-offset_left = -8.0
-offset_top = 1.0
-offset_right = 1658.0
-offset_bottom = 913.0
+layout_mode = 0
+offset_left = -943.0
+offset_top = -341.0
+offset_right = 1079.0
+offset_bottom = 571.0
 color = Color(1, 0.623529, 0, 1)
 
-[node name="Како се игра?" type="Label" parent="."]
-layout_mode = 2
-offset_right = 608.0
-offset_bottom = 69.0
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -576.0
+offset_top = -327.0
+offset_right = 576.0
+offset_bottom = 324.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Како се игра?" type="Label" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
 size_flags_horizontal = 4
 theme_override_fonts/font = ExtResource("1_le0ix")
 theme_override_font_sizes/font_size = 55
 text = "Како се игра?"
 
-[node name="Погоди го зборот" type="Label" parent="."]
+[node name="Control" type="Control" parent="ScrollContainer/VBoxContainer"]
 layout_mode = 2
-offset_left = 74.0
-offset_top = 73.0
-offset_right = 534.0
-offset_bottom = 111.0
+
+[node name="Погоди го зборот" type="Label" parent="ScrollContainer/VBoxContainer/Control"]
+layout_mode = 2
+offset_left = 339.0
+offset_top = 26.0
+offset_right = 799.0
+offset_bottom = 64.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
@@ -42,17 +67,17 @@ theme_override_fonts/font = ExtResource("1_le0ix")
 theme_override_font_sizes/font_size = 30
 text = "1.погоди го зборот"
 
-[node name="Label2" type="Label" parent="Погоди го зборот"]
+[node name="Label2" type="Label" parent="ScrollContainer/VBoxContainer/Control/Погоди го зборот"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -551.5
-offset_top = -45.0
-offset_right = 551.5
-offset_bottom = 45.0
+offset_left = -548.0
+offset_top = 22.0
+offset_right = 555.0
+offset_bottom = 112.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("1_le0ix")
@@ -63,8 +88,98 @@ text = "Постави го телефонот пред твојата  глав
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Нагоре или надолу?" type="Label" parent="."]
+[node name="Нагоре или надолу?" type="Label" parent="ScrollContainer/VBoxContainer/Control"]
 layout_mode = 2
-offset_top = 115.0
-offset_right = 608.0
-offset_bottom = 138.0
+offset_left = 327.0
+offset_top = 190.0
+offset_right = 837.0
+offset_bottom = 228.0
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.231373, 0.615686, 0.615686, 1)
+theme_override_fonts/font = ExtResource("1_le0ix")
+theme_override_font_sizes/font_size = 30
+text = "2.Нагоре или надолу?"
+
+[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer/Control/Нагоре или надолу?"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -552.0
+offset_top = 27.0
+offset_right = 554.0
+offset_bottom = 117.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_le0ix")
+theme_override_font_sizes/font_size = 22
+text = "Навалиго телефонот така што екранот ќе биде насочен надолу 
+го погоди зборот.
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="ScrollContainer/VBoxContainer/Control/Нагоре или надолу?"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -554.0
+offset_top = 94.0
+offset_right = 552.0
+offset_bottom = 184.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_le0ix")
+theme_override_font_sizes/font_size = 22
+text = "Навалиго телефонот така што екранот ќе биде насочен нагоре 
+доколку сакаш да го прескокнеш зборот.
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Времето истече" type="Label" parent="ScrollContainer/VBoxContainer/Control"]
+offset_left = 330.0
+offset_top = 400.0
+offset_right = 840.0
+offset_bottom = 438.0
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.231373, 0.615686, 0.615686, 1)
+theme_override_fonts/font = ExtResource("1_le0ix")
+theme_override_font_sizes/font_size = 30
+text = "3.Времето истече"
+
+[node name="Label2" type="Label" parent="ScrollContainer/VBoxContainer/Control/Времето истече"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -574.0
+offset_top = 20.0
+offset_right = 549.0
+offset_bottom = 110.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_le0ix")
+theme_override_font_sizes/font_size = 22
+text = "Целта на играта е да погодиш што е можно повеќе зборови пред
+да истече времето"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Back" type="TextureButton" parent="."]
+layout_mode = 1
+offset_left = -567.0
+offset_top = -315.0
+offset_right = -503.0
+offset_bottom = -251.0
+texture_normal = ExtResource("3_2rsjb")
+flip_h = true
+
+[connection signal="pressed" from="Back" to="." method="_on_back_button_pressed"]
