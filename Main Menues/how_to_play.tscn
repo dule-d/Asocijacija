@@ -1,0 +1,70 @@
+[gd_scene load_steps=2 format=3 uid="uid://yd3hwsijep5t"]
+
+[ext_resource type="FontFile" uid="uid://bkogwpgk20lp" path="res://RubikMonoOne-Regular.ttf" id="1_le0ix"]
+
+[node name="HowToPlay" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -8.0
+offset_top = 1.0
+offset_right = 1658.0
+offset_bottom = 913.0
+color = Color(1, 0.623529, 0, 1)
+
+[node name="Како се игра?" type="Label" parent="."]
+layout_mode = 2
+offset_right = 608.0
+offset_bottom = 69.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("1_le0ix")
+theme_override_font_sizes/font_size = 55
+text = "Како се игра?"
+
+[node name="Погоди го зборот" type="Label" parent="."]
+layout_mode = 2
+offset_left = 74.0
+offset_top = 73.0
+offset_right = 534.0
+offset_bottom = 111.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.231373, 0.615686, 0.615686, 1)
+theme_override_fonts/font = ExtResource("1_le0ix")
+theme_override_font_sizes/font_size = 30
+text = "1.погоди го зборот"
+
+[node name="Label2" type="Label" parent="Погоди го зборот"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -551.5
+offset_top = -45.0
+offset_right = 551.5
+offset_bottom = 45.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_le0ix")
+theme_override_font_sizes/font_size = 22
+text = "Постави го телефонот пред твојата  глава под прав агол. 
+Погодувај ги зборовите додека твоите пријатели објаснуваат,
+ глумат, пеат или ги опишуваат зборовите."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Нагоре или надолу?" type="Label" parent="."]
+layout_mode = 2
+offset_top = 115.0
+offset_right = 608.0
+offset_bottom = 138.0

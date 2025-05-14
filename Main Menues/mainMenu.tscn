@@ -1,0 +1,136 @@
+[gd_scene load_steps=6 format=3 uid="uid://bdkhp5pjhxgfq"]
+
+[ext_resource type="Script" uid="uid://faiy73rp61gx" path="res://Scripts/MainMenu.gd" id="1_e0gmy"]
+[ext_resource type="FontFile" uid="uid://bkogwpgk20lp" path="res://RubikMonoOne-Regular.ttf" id="1_y5nxu"]
+[ext_resource type="Texture2D" uid="uid://b0qjnbxqxa16f" path="res://Buttons/red button.png" id="2_e0gmy"]
+[ext_resource type="Texture2D" uid="uid://e5gprrh1mdpf" path="res://Buttons/green button.png" id="4_sdart"]
+[ext_resource type="Texture2D" uid="uid://cvfcav0x1oqr7" path="res://Buttons/pink button.png" id="5_a4fbw"]
+
+[node name="Main Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_e0gmy")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1947.0
+offset_bottom = 950.0
+color = Color(1, 0.623529, 0, 1)
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -472.0
+offset_top = 116.0
+offset_right = 472.0
+offset_bottom = 242.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.188235, 0.596078, 0.596078, 1)
+theme_override_fonts/font = ExtResource("1_y5nxu")
+theme_override_font_sizes/font_size = 101
+text = "АСОЦИЈАЦИЈА"
+
+[node name="Sub Title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -327.0
+offset_top = 225.0
+offset_right = 280.0
+offset_bottom = 289.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.188235, 0.596078, 0.596078, 1)
+theme_override_fonts/font = ExtResource("1_y5nxu")
+theme_override_font_sizes/font_size = 51
+text = "ДРУШТВЕНА ИГРА"
+
+[node name="Buttons" type="CanvasLayer" parent="."]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Buttons"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -384.0
+offset_top = -64.0
+offset_right = 384.0
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Red Button PLAY" type="TouchScreenButton" parent="Buttons/VBoxContainer"]
+position = Vector2(0, 87)
+texture_normal = ExtResource("2_e0gmy")
+action = "Play"
+
+[node name="Text" type="Label" parent="Buttons/VBoxContainer/Red Button PLAY"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -76.5
+offset_top = -23.0
+offset_right = 76.5
+offset_bottom = 23.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_y5nxu")
+theme_override_font_sizes/font_size = 36
+text = "ИГРАЈ"
+metadata/_edit_use_anchors_ = true
+
+[node name="Green Button SETTINGS" type="TouchScreenButton" parent="Buttons/VBoxContainer"]
+position = Vector2(256, 87)
+texture_normal = ExtResource("4_sdart")
+
+[node name="Text" type="Label" parent="Buttons/VBoxContainer/Green Button SETTINGS"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -76.5
+offset_top = -23.0
+offset_right = 76.5
+offset_bottom = 23.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_y5nxu")
+theme_override_font_sizes/font_size = 36
+text = "ОПЦИИ"
+metadata/_edit_use_anchors_ = true
+
+[node name="PInk Button HtP" type="TouchScreenButton" parent="Buttons/VBoxContainer"]
+position = Vector2(512, 87)
+texture_normal = ExtResource("5_a4fbw")
+
+[node name="Text" type="Label" parent="Buttons/VBoxContainer/PInk Button HtP"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -76.5
+offset_top = -23.0
+offset_right = 76.5
+offset_bottom = 23.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_y5nxu")
+theme_override_font_sizes/font_size = 36
+text = "како се
+игра?"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="Buttons/VBoxContainer/Red Button PLAY" to="." method="_on_red_button_play_pressed"]

@@ -1,0 +1,358 @@
+[gd_scene load_steps=10 format=3 uid="uid://bhwycwx8ccgm4"]
+
+[ext_resource type="Texture2D" uid="uid://b2ienc8rckdky" path="res://Buttons/green big button.png" id="1_3qxtk"]
+[ext_resource type="Script" uid="uid://73oa7436im3a" path="res://Scripts/play_menu.gd" id="1_f3yk3"]
+[ext_resource type="FontFile" uid="uid://bkogwpgk20lp" path="res://RubikMonoOne-Regular.ttf" id="2_f3yk3"]
+[ext_resource type="Texture2D" uid="uid://bwp5njyyylx7j" path="res://Buttons/Icons/right-arrow (1).png" id="3_aroo6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tmpek"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1psad"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6ysif"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6futu"]
+
+[sub_resource type="Theme" id="Theme_nhfoe"]
+VScrollBar/styles/grabber = SubResource("StyleBoxEmpty_tmpek")
+VScrollBar/styles/grabber_highlight = SubResource("StyleBoxEmpty_1psad")
+VScrollBar/styles/grabber_pressed = SubResource("StyleBoxEmpty_6ysif")
+VScrollBar/styles/scroll = SubResource("StyleBoxEmpty_6futu")
+
+[node name="Play Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_f3yk3")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = -8.0
+offset_top = 1.0
+offset_right = 1658.0
+offset_bottom = 913.0
+color = Color(1, 0.623529, 0, 1)
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -546.0
+offset_top = -246.0
+offset_right = 547.0
+offset_bottom = 318.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_nhfoe")
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Сите Категории" type="TextureButton" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("1_3qxtk")
+
+[node name="Сите Категории" type="Label" parent="ScrollContainer/VBoxContainer/Сите Категории"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -297.5
+offset_top = -64.5
+offset_right = 297.5
+offset_bottom = 64.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_f3yk3")
+theme_override_font_sizes/font_size = 50
+text = "Сите категории"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Предмети" type="TextureButton" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("1_3qxtk")
+
+[node name="Предмети" type="Label" parent="ScrollContainer/VBoxContainer/Предмети"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -297.5
+offset_top = -64.5
+offset_right = 297.5
+offset_bottom = 64.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_f3yk3")
+theme_override_font_sizes/font_size = 50
+text = "Предмети"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Животни" type="TextureButton" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("1_3qxtk")
+
+[node name="Животни" type="Label" parent="ScrollContainer/VBoxContainer/Животни"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -297.5
+offset_top = -64.5
+offset_right = 297.5
+offset_bottom = 64.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_f3yk3")
+theme_override_font_sizes/font_size = 50
+text = "Животни"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Професии" type="TextureButton" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("1_3qxtk")
+
+[node name="Професии" type="Label" parent="ScrollContainer/VBoxContainer/Професии"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -297.5
+offset_top = -64.5
+offset_right = 297.5
+offset_bottom = 64.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_f3yk3")
+theme_override_font_sizes/font_size = 50
+text = "Професии"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Лиѓе" type="TextureButton" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("1_3qxtk")
+
+[node name="Луѓе" type="Label" parent="ScrollContainer/VBoxContainer/Лиѓе"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -297.5
+offset_top = -64.5
+offset_right = 297.5
+offset_bottom = 64.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_f3yk3")
+theme_override_font_sizes/font_size = 50
+text = "Луѓе"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Храна" type="TextureButton" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("1_3qxtk")
+
+[node name="Храна" type="Label" parent="ScrollContainer/VBoxContainer/Храна"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -297.5
+offset_top = -64.5
+offset_right = 297.5
+offset_bottom = 64.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_f3yk3")
+theme_override_font_sizes/font_size = 50
+text = "Храна"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Активности" type="TextureButton" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("1_3qxtk")
+
+[node name="Активности" type="Label" parent="ScrollContainer/VBoxContainer/Активности"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -297.5
+offset_top = -64.5
+offset_right = 297.5
+offset_bottom = 64.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_f3yk3")
+theme_override_font_sizes/font_size = 50
+text = "Активности"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Држави" type="TextureButton" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("1_3qxtk")
+
+[node name="Држава" type="Label" parent="ScrollContainer/VBoxContainer/Држави"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -297.5
+offset_top = -64.5
+offset_right = 297.5
+offset_bottom = 64.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_f3yk3")
+theme_override_font_sizes/font_size = 50
+text = "Држава"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Спорт" type="TextureButton" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("1_3qxtk")
+
+[node name="Спорт" type="Label" parent="ScrollContainer/VBoxContainer/Спорт"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -297.5
+offset_top = -64.5
+offset_right = 297.5
+offset_bottom = 64.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_f3yk3")
+theme_override_font_sizes/font_size = 50
+text = "Спорт"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Градови" type="TextureButton" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("1_3qxtk")
+
+[node name="Градови" type="Label" parent="ScrollContainer/VBoxContainer/Градови"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -297.5
+offset_top = -64.5
+offset_right = 297.5
+offset_bottom = 64.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_f3yk3")
+theme_override_font_sizes/font_size = 50
+text = "Градови"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Автомобили" type="TextureButton" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("1_3qxtk")
+
+[node name="Автомобили" type="Label" parent="ScrollContainer/VBoxContainer/Автомобили"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -297.5
+offset_top = -64.5
+offset_right = 297.5
+offset_bottom = 64.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_f3yk3")
+theme_override_font_sizes/font_size = 50
+text = "Автомобили"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Гравни Градови" type="TextureButton" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("1_3qxtk")
+
+[node name="Гравни Градови" type="Label" parent="ScrollContainer/VBoxContainer/Гравни Градови"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -297.5
+offset_top = -64.5
+offset_right = 297.5
+offset_bottom = 64.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_f3yk3")
+theme_override_font_sizes/font_size = 50
+text = "Гравни Градови"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Back" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 60.0
+offset_top = 12.0
+offset_right = 124.0
+offset_bottom = 76.0
+texture_normal = ExtResource("3_aroo6")
+flip_h = true
+
+[connection signal="pressed" from="Back" to="." method="_on_button_back_pressed"]
