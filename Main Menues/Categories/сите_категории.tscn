@@ -91,4 +91,3 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("2_i2cl6")
 theme_override_font_sizes/font_size = 211
-text = "YES"
