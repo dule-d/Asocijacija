@@ -13,3 +13,7 @@ func _process(delta: float) -> void:
 
 func _on_button_back_pressed() -> void:
 	get_tree().change_scene_to_file("res://Main Menues/mainMenu.tscn")
+
+
+func _on_сите_категории_pressed() -> void:
+	get_tree().change_scene_to_file("res://Main Menues/Categories/сите_категории.tscn")

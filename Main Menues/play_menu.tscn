@@ -355,4 +355,5 @@ offset_bottom = 76.0
 texture_normal = ExtResource("3_aroo6")
 flip_h = true
 
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/Сите Категории" to="." method="_on_сите_категории_pressed"]
 [connection signal="pressed" from="Back" to="." method="_on_button_back_pressed"]
