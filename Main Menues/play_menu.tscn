@@ -275,6 +275,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Градови" type="TextureButton" parent="ScrollContainer/VBoxContainer"]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 4
 texture_normal = ExtResource("1_3qxtk")
@@ -299,6 +300,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Автомобили" type="TextureButton" parent="ScrollContainer/VBoxContainer"]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 4
 texture_normal = ExtResource("1_3qxtk")
@@ -323,6 +325,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Гравни Градови" type="TextureButton" parent="ScrollContainer/VBoxContainer"]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 4
 texture_normal = ExtResource("1_3qxtk")
