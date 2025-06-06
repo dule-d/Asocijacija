@@ -59,6 +59,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Сите Категории" type="TextureButton" parent="ScrollContainer/VBoxContainer"]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 4
 texture_normal = ExtResource("1_3qxtk")
@@ -78,7 +79,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("2_f3yk3")
 theme_override_font_sizes/font_size = 50
-text = "Сите категории"
+text = "Сите Категории"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -154,30 +155,6 @@ text = "Професии"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Лиѓе" type="TextureButton" parent="ScrollContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-texture_normal = ExtResource("1_3qxtk")
-
-[node name="Луѓе" type="Label" parent="ScrollContainer/VBoxContainer/Лиѓе"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -297.5
-offset_top = -64.5
-offset_right = 297.5
-offset_bottom = 64.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_fonts/font = ExtResource("2_f3yk3")
-theme_override_font_sizes/font_size = 50
-text = "Луѓе"
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="Храна" type="TextureButton" parent="ScrollContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
@@ -231,7 +208,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 texture_normal = ExtResource("1_3qxtk")
 
-[node name="Држава" type="Label" parent="ScrollContainer/VBoxContainer/Држави"]
+[node name="Држави" type="Label" parent="ScrollContainer/VBoxContainer/Држави"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -246,7 +223,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("2_f3yk3")
 theme_override_font_sizes/font_size = 50
-text = "Држава"
+text = "Држави"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -271,6 +248,31 @@ grow_vertical = 2
 theme_override_fonts/font = ExtResource("2_f3yk3")
 theme_override_font_sizes/font_size = 50
 text = "Спорт"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Луѓе" type="TextureButton" parent="ScrollContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("1_3qxtk")
+
+[node name="Луѓе" type="Label" parent="ScrollContainer/VBoxContainer/Луѓе"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -297.5
+offset_top = -64.5
+offset_right = 297.5
+offset_bottom = 64.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_f3yk3")
+theme_override_font_sizes/font_size = 50
+text = "Луѓе"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -324,13 +326,13 @@ text = "Автомобили"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Гравни Градови" type="TextureButton" parent="ScrollContainer/VBoxContainer"]
+[node name="Главни Градови" type="TextureButton" parent="ScrollContainer/VBoxContainer"]
 visible = false
 layout_mode = 2
 size_flags_horizontal = 4
 texture_normal = ExtResource("1_3qxtk")
 
-[node name="Гравни Градови" type="Label" parent="ScrollContainer/VBoxContainer/Гравни Градови"]
+[node name="Главни Градови" type="Label" parent="ScrollContainer/VBoxContainer/Главни Градови"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -345,18 +347,51 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("2_f3yk3")
 theme_override_font_sizes/font_size = 50
-text = "Гравни Градови"
+text = "Главни Градови"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="English" type="TextureButton" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("1_3qxtk")
+
+[node name="English" type="Label" parent="ScrollContainer/VBoxContainer/English"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -297.5
+offset_top = -64.5
+offset_right = 297.5
+offset_bottom = 64.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_f3yk3")
+theme_override_font_sizes/font_size = 50
+text = "English"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Back" type="TextureButton" parent="."]
 layout_mode = 0
-offset_left = 60.0
-offset_top = 12.0
-offset_right = 124.0
-offset_bottom = 76.0
+offset_left = 15.0
+offset_top = 7.0
+offset_right = 79.0
+offset_bottom = 71.0
 texture_normal = ExtResource("3_aroo6")
 flip_h = true
 
 [connection signal="pressed" from="ScrollContainer/VBoxContainer/Сите Категории" to="." method="_on_сите_категории_pressed"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/Предмети" to="." method="_on_предмети_pressed"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/Животни" to="." method="_on_животни_pressed"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/Професии" to="." method="_on_професии_pressed"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/Храна" to="." method="_on_храна_pressed"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/Активности" to="." method="_on_активности_pressed"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/Држави" to="." method="_on_држави_pressed"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/Спорт" to="." method="_on_спорт_pressed"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/Луѓе" to="." method="_on_луѓе_pressed"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/English" to="." method="_on_english_pressed"]
 [connection signal="pressed" from="Back" to="." method="_on_button_back_pressed"]

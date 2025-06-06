@@ -1,15 +1,47 @@
 extends Control
 
 # UI Nodes
-@onready var timer_label = $ColorRect_Timer/Label
-@onready var countdown_label = $ColorRect_Countdown/Label
+@onready var countdown_label = $"Counter Label"
+@onready var timer_label = $"Timer Label"
 @onready var main_word_label = $Words
-@onready var color_rect_timer = $ColorRect_Timer
-@onready var color_rect_countdown = $ColorRect_Countdown
+@onready var color_rect_bb = $ColorRect_Timer
 
-# Game Data
-var categories = {
-	"Сите категории": [	"", "", "", "", "", "", "", "", "", "",  
+
+# Timer variables that are used inside the func
+
+var countdown_values = ["3","2","1"]
+var countdown_index = 0
+
+
+@onready var timer_value = GlobalSettings.timer_value
+
+
+
+
+# Right and Left zones for right or wrong
+@onready var left_click_zone = $Left
+@onready var right_click_zone = $Right
+
+
+
+
+#Buttons 
+@onready var correct_button = $Right
+@onready var wrong_button = $Left
+
+
+# Score tracking
+var correct_guesses = 0
+var incorrect_guesses = 0
+
+
+# Screen devided for right or wrong answers
+var is_selecting = false
+var is_game_active = false
+
+
+var catagories = {
+	"Сите категории": [	"Сите категории", "а", "д", "", "", "", "", "", "", "",  
 						"", "", "", "", "", "", "", "", "", "",
 	 					"", "", "", "", "", "", "", "", "", "",  
 						"", "", "", "", "", "", "", "", "", "",
@@ -125,50 +157,54 @@ var categories = {
 	
 
 }
-var current_category = "Предмети"  # Change this to use another category
+
+var current_category = "Предмети"
 
 var word_list = []
-var countdown_values = ["3", "2", "1"]
-var countdown_index = 0
-var timer_value = 180  # 3 minutes in seconds
 
-# Score tracking
-var correct_guesses = 0
-var incorrect_guesses = 0
 
-# Tilt detection
-var tilt_threshold = 7.0  # Adjust as needed
-var is_selecting = false
 
 func _ready():
-	word_list = categories[current_category].duplicate()
+	word_list = catagories[current_category].duplicate()
 	hide_main_words()
-	color_rect_timer.color = Color(100, 62.4, 0)
+
+	left_click_zone.connect("gui_input", Callable(self, "_on_left_zone_input"))
+	right_click_zone.connect("gui_input", Callable(self, "_on_right_zone_input"))
 
 
-# Countdown logic (3..2..1)
+
+# Countdown - 3,2,1
 func hide_main_words():
 	main_word_label.visible = false
 	await start_countdown()
 	main_word_label.visible = true
 
 func start_countdown() -> void:
-	color_rect_countdown.visible = true
-	color_rect_timer.visible = false
+	countdown_label.visible = true
+	timer_label.visible = false
+	
+	correct_button.disabled = true
+	wrong_button.disabled = true
 
 	while countdown_index < countdown_values.size():
-		color_rect_countdown.get_node("Label").text = countdown_values[countdown_index]
+		countdown_label.text = countdown_values[countdown_index]
 		countdown_index += 1
+		$CountDownTimer.play()
 		await get_tree().create_timer(1.0).timeout
 
-	color_rect_countdown.visible = false
-	color_rect_timer.visible = true
+
+	correct_button.disabled = false
+	wrong_button.disabled = false
+		
+	countdown_label.visible = false
+	timer_label.visible = true
+	
+	is_game_active = true
+	$Beep.play()
 	start_main_timer()
 
-# Game timer logic
 func start_main_timer():
 	var remaining_time = timer_value
-
 	display_random_word(current_category)
 
 	while remaining_time > 0:
@@ -177,56 +213,54 @@ func start_main_timer():
 		timer_label.text = "%02d:%02d" % [minutes, seconds]
 		await get_tree().create_timer(1.0).timeout
 		remaining_time -= 1
-
+	
 	timer_label.text = "00:00"
 	end_game()
 
-# Display a random word from category
 func display_random_word(category: String):
-	if word_list.is_empty():
-		word_list = categories[category].duplicate()
+	if	word_list.is_empty():
+		word_list = catagories[category].duplicate()
 	var random_word = word_list.pick_random()
 	main_word_label.text = random_word
 	word_list.erase(random_word)
 
-# Handle tilting up/down
-func _process(_delta):
-	var tilt = Input.get_accelerometer()
-
-	# Debug print if needed: print(tilt)
-	if timer_label == null or timer_label.text == "00:00":
-		return
-
-	# TILT FORWARD (screen facing down)
-	if tilt.y > 4 and not is_selecting:
-		is_selecting = true
-		correct_guesses += 1
-		color_rect_timer.color = Color(0, 1, 0)  # Green
-		change_word()
-
-	# TILT BACKWARD (screen facing up)
-	elif tilt.y < -4 and not is_selecting:
-		is_selecting = true
-		incorrect_guesses += 1
-		color_rect_timer.color = Color(1, 0, 0)  # Red
-		change_word()
-
-	# RESET (phone returns to vertical position)
-	elif tilt.y > -1.5 and tilt.y < 1.5 and is_selecting:
-		is_selecting = false
-		color_rect_timer.color = Color.GRAY
-
 func change_word():
 	display_random_word(current_category)
 	await get_tree().create_timer(1.0).timeout
-	color_rect_timer.color = Color(0, 0, 0, 0)  # Reset color
+	color_rect_bb.color = Color8(255, 159, 0, 255)
 	is_selecting = false
 
-# Show result
 func end_game():
-	main_word_label.text = "Крај!\nТочни: %d\nНеточни: %d" % [correct_guesses, incorrect_guesses]
+	main_word_label.text = "End!\nCorrect: %d\nIncorrect: %d" % [correct_guesses, incorrect_guesses]
+	$Win.play()
 	main_word_label.visible = true
+	
+	correct_button.disabled = true
+	wrong_button.disabled = true
 
 
-func _on_back_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://Main Menues/play_menu.tscn")
+
+
+func _on_exit_button_pressed() -> void:
+	get_tree().change_scene_to_file("Main Menues/play_menu.tscn")
+
+
+
+
+func _on_correct_button_pressed() -> void:
+	if not is_game_active or is_selecting:
+		return
+	is_selecting = true
+	correct_guesses += 1
+	color_rect_bb.color = Color(0, 1, 0)  # Green
+	change_word()
+	$Correct.play()
+
+func _on_wrong_button_pressed() -> void:
+	if not is_game_active or is_selecting:
+		return
+	is_selecting = true
+	incorrect_guesses += 1
+	color_rect_bb.color = Color(1, 0, 0)  # Red
+	change_word()
+	$Incorrect.play()

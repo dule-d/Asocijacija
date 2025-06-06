@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://bdkhp5pjhxgfq"]
+[gd_scene load_steps=7 format=3 uid="uid://bdkhp5pjhxgfq"]
 
 [ext_resource type="Script" uid="uid://faiy73rp61gx" path="res://Scripts/MainMenu.gd" id="1_e0gmy"]
 [ext_resource type="FontFile" uid="uid://bkogwpgk20lp" path="res://RubikMonoOne-Regular.ttf" id="1_y5nxu"]
 [ext_resource type="Texture2D" uid="uid://b0qjnbxqxa16f" path="res://Buttons/red button.png" id="2_e0gmy"]
 [ext_resource type="Texture2D" uid="uid://e5gprrh1mdpf" path="res://Buttons/green button.png" id="4_sdart"]
 [ext_resource type="Texture2D" uid="uid://cvfcav0x1oqr7" path="res://Buttons/pink button.png" id="5_a4fbw"]
+[ext_resource type="Texture2D" uid="uid://bwp5njyyylx7j" path="res://Buttons/Icons/right-arrow (1).png" id="6_e0gmy"]
 
 [node name="Main Menu" type="Control"]
 layout_mode = 3
@@ -85,7 +86,9 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("1_y5nxu")
 theme_override_font_sizes/font_size = 36
-text = "ИГРАЈ"
+text = "Play"
+horizontal_alignment = 1
+vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="Green Button SETTINGS" type="TouchScreenButton" parent="Buttons/VBoxContainer"]
@@ -107,6 +110,8 @@ grow_vertical = 2
 theme_override_fonts/font = ExtResource("1_y5nxu")
 theme_override_font_sizes/font_size = 36
 text = "ОПЦИИ"
+horizontal_alignment = 1
+vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="PInk Button HtP" type="TouchScreenButton" parent="Buttons/VBoxContainer"]
@@ -133,5 +138,16 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
+[node name="TextureButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 80.0
+offset_top = 76.0
+offset_right = 144.0
+offset_bottom = 140.0
+rotation = -3.14159
+texture_normal = ExtResource("6_e0gmy")
+
 [connection signal="pressed" from="Buttons/VBoxContainer/Red Button PLAY" to="." method="_on_red_button_play_pressed"]
+[connection signal="pressed" from="Buttons/VBoxContainer/Green Button SETTINGS" to="." method="_on_green_button_settings_pressed"]
 [connection signal="pressed" from="Buttons/VBoxContainer/PInk Button HtP" to="." method="_on_pink_button_h2p_pressed"]
+[connection signal="pressed" from="TextureButton" to="." method="_on_exit_button_pressed"]

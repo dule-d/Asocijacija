@@ -13,11 +13,15 @@ config_version=5
 config/name="Асоцијација"
 run/main_scene="uid://bdkhp5pjhxgfq"
 config/features=PackedStringArray("4.4", "Mobile")
-boot_splash/bg_color=Color(0.241156, 0.241156, 0.241156, 1)
+boot_splash/bg_color=Color(0.118581, 0.118581, 0.118581, 1)
 boot_splash/use_filter=false
 boot_splash/image="uid://bu5s77s88ov35"
 config/icon="uid://btky4mqfdb1bo"
 boot_splash/minimum_display_time=100
+
+[autoload]
+
+GlobalSettings="*res://Scripts/GlobalSettings.gd"
 
 [display]
 
@@ -36,7 +40,6 @@ Play={
 [input_devices]
 
 sensors/enable_accelerometer=true
-sensors/enable_gyroscope=true
 pointing/emulate_touch_from_mouse=true
 
 [rendering]

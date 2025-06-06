@@ -88,40 +88,19 @@ text = "Постави го телефонот пред твојата  глав
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Нагоре или надолу?" type="Label" parent="ScrollContainer/VBoxContainer/Control"]
+[node name="Лево или Десно" type="Label" parent="ScrollContainer/VBoxContainer/Control"]
 layout_mode = 2
-offset_left = 327.0
-offset_top = 190.0
-offset_right = 837.0
-offset_bottom = 228.0
+offset_left = 322.0
+offset_top = 216.0
+offset_right = 832.0
+offset_bottom = 254.0
 size_flags_horizontal = 4
 theme_override_colors/font_color = Color(0.231373, 0.615686, 0.615686, 1)
 theme_override_fonts/font = ExtResource("1_le0ix")
 theme_override_font_sizes/font_size = 30
 text = "2.Нагоре или надолу?"
 
-[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer/Control/Нагоре или надолу?"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -552.0
-offset_top = 27.0
-offset_right = 554.0
-offset_bottom = 117.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_fonts/font = ExtResource("1_le0ix")
-theme_override_font_sizes/font_size = 22
-text = "Навалиго телефонот така што екранот ќе биде насочен надолу 
-го погоди зборот.
-"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Label2" type="Label" parent="ScrollContainer/VBoxContainer/Control/Нагоре или надолу?"]
+[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer/Control/Лево или Десно"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -129,20 +108,39 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -554.0
-offset_top = 94.0
+offset_top = 60.0
 offset_right = 552.0
-offset_bottom = 184.0
+offset_bottom = 150.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("1_le0ix")
 theme_override_font_sizes/font_size = 22
-text = "Навалиго телефонот така што екранот ќе биде насочен нагоре 
-доколку сакаш да го прескокнеш зборот.
+text = "Чкрапни лево за точен одговор
 "
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Label2" type="Label" parent="ScrollContainer/VBoxContainer/Control/Лево или Десно"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -560.0
+offset_top = 2.0
+offset_right = 546.0
+offset_bottom = 92.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_le0ix")
+theme_override_font_sizes/font_size = 22
+text = "Чкрапни десно за грешен одговор"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="Времето истече" type="Label" parent="ScrollContainer/VBoxContainer/Control"]
+layout_mode = 0
 offset_left = 330.0
 offset_top = 400.0
 offset_right = 840.0

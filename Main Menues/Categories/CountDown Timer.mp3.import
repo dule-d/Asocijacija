@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bq0sp0bdppsnt"
+path="res://.godot/imported/CountDown Timer.mp3-813edbb70f7d4160f7c22787abbac8bb.mp3str"
+
+[deps]
+
+source_file="res://Main Menues/Categories/CountDown Timer.mp3"
+dest_files=["res://.godot/imported/CountDown Timer.mp3-813edbb70f7d4160f7c22787abbac8bb.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
